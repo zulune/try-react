@@ -4,12 +4,17 @@ import YouTube from 'react-youtube';
 // https://youtu.be/1V4AscLidWg
 
 class ReactYouTubeExample extends Component {
-    state = {playerObj: null};
+    constructor(props){
+        super(props)
+        this.state = {
+            playerObj: null
+        }
+    }
     videoOnReady(event) {
         const player = event.target
-        this.setState({
-            playerObj: player
-        })
+        // this.setState({
+        //     playerObj: player
+        // })
         player.seekTo(50)
     }
     videoOnPlay(event) {
